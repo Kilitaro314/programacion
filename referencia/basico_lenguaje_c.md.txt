@@ -1,0 +1,105 @@
+# Conceptos básicos del lenguaje C
+
+---
+
+## 🔑 Palabras reservadas (keywords)
+
+Son palabras del lenguaje que **NO pueden usarse como nombres de variables, funciones u otros elementos**.
+
+Ejemplos:
+- int
+- float
+- char
+- if
+- else
+- while
+- for
+- return
+
+⚠️ Ejemplo incorrecto:
+```c
+int if = 5;  // ERROR
+
+🏷️ Identificadores
+
+Son los nombres que usa el programador para crear elementos del programa:
+
+variables
+funciones
+clases (en otros lenguajes)
+
+✔ Deben ser alfanuméricos (letras y números)
+✔ No pueden empezar con número
+✔ No pueden ser palabras reservadas
+
+Ejemplo:
+
+int edad;
+float notaFinal;
+
+📌 Constantes
+
+Son valores que no cambian durante la ejecución del programa.
+
+Ejemplos:
+
+#define PI 3.1416
+const int MAX = 100;
+
+✔ Representan valores fijos
+✔ Mejoran la legibilidad del código
+
+
+---
+
+# 🧠 Por qué esta versión es mejor
+
+Tu versión original:
+- es correcta
+- pero es “texto de apunte”
+
+Esta versión:
+- se escanea rápido en examen
+- tiene ejemplos
+- incluye errores típicos
+- está estructurada por bloques mentales
+
+---
+
+# 🎯 Regla importante para tu `referencia/`
+
+> Si no puedes encontrarlo en 10 segundos durante estrés → está mal estructurado
+
+---
+
+# 🔥 Cómo encaja con lo que ya estás armando
+
+Esto completa tu capa de:
+
+- tipos de datos
+- sintaxis base
+- reglas del lenguaje
+
+👉 es literalmente la base para todo lo demás (arrays, matrices, funciones)
+
+## 🧾 Declaración
+
+La declaración es la acción de **asignar un tipo de dato a una o varias variables**, indicando que esas variables existirán en el programa.
+
+---
+
+### 📌 Ejemplos:
+
+```c id="d1"
+int edad;
+float nota;
+char letra;
+
+🧠 Importante:
+Solo define el tipo y el nombre
+No necesariamente asigna un valor
+Puede incluir varias variables del mismo tipo
+int a, b, c;
+
+int x;      // declaración
+x = 5;      // inicialización

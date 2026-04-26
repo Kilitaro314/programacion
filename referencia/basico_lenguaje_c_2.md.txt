@@ -1,0 +1,105 @@
+## Definiciones clave
+
+**Variable**
+→ Espacio de memoria con un valor que puede cambiar
+
+**Constante**
+→ Valor que no cambia durante la ejecución
+
+**Tipo de dato**
+→ Define qué tipo de valor puede guardar una variable (`int`, `float`, etc.)
+
+---
+
+**Operador**
+→ Símbolo que realiza una operación (`+`, `==`, etc.)
+
+**Expresión**
+→ Combinación de variables, valores y operadores que da un resultado
+
+---
+
+**Condición**
+→ Expresión que da verdadero o falso
+
+---
+
+**Estructura repetitiva (loop)**
+→ Repite un bloque de código (`while`, `for`, `do-while`)
+
+**while**
+→ Repite mientras la condición sea verdadera
+
+**do-while**
+→ Ejecuta al menos una vez, luego evalúa
+
+**for**
+→ Loop con inicio, condición y actualización
+
+---
+
+**Estructura condicional**
+→ Ejecuta código según condición (`if`, `switch`)
+
+---
+
+**Switch**
+→ Selecciona entre múltiples casos según un valor
+
+---
+
+**Break**
+→ Corta un loop o un `switch`
+
+---
+
+**Array (vector)**
+→ Conjunto de elementos del mismo tipo
+
+**Matriz**
+→ Array de dos dimensiones
+
+---
+
+**Índice**
+→ Posición dentro de un array (empieza en 0)
+
+---
+
+**Acumulador**
+→ Variable que guarda resultados parciales (ej: suma)
+
+**Contador**
+→ Variable que cuenta repeticiones
+
+---
+
+## Cómo responder en examen
+
+Si te dan una descripción:
+
+> “estructura que repite un bloque al menos una vez”
+
+→ **do-while**
+
+---
+
+> “variable que guarda resultados parciales”
+
+→ **acumulador**
+
+---
+
+> “evalúa múltiples opciones según un valor”
+
+→ **switch**
+
+---
+
+## Tip clave
+
+No memorices palabras sueltas, memorizá la **idea corta**:
+
+* “repite mientras” → while
+* “mínimo una vez” → do-while
+* “casos múltiples” → switch

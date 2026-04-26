@@ -1,0 +1,54 @@
+# 🧠 Estructuras de control en C
+
+---
+
+## 🔁 Secuencialidad
+
+Es la forma más básica de ejecución.
+
+👉 El código se ejecuta **de arriba hacia abajo**, línea por línea, sin saltos.
+
+```c
+int a = 5;
+int b = 10;
+int c = a + b;
+
+✔ No hay decisiones ni repeticiones
+✔ Flujo lineal
+
+🔀 Selección
+
+Permite que el programa tome decisiones según condiciones.
+
+Se usa con:
+
+if
+else
+switch
+if (edad >= 18) {
+    printf("Mayor de edad");
+} else {
+    printf("Menor de edad");
+}
+
+✔ Cambia el flujo del programa según condiciones
+
+🔁 Iteración
+
+Permite repetir instrucciones varias veces sin escribirlas manualmente.
+
+Se usa con:
+
+for
+while
+for (int i = 0; i < 5; i++) {
+    printf("%d\n", i);
+}
+
+✔ Evita repetición de código
+✔ Controla ciclos
+
+🎯 Resumen mental rápido
+Secuencial → “hace todo en orden”
+Selección → “elige un camino”
+Iteración → “repite cosas”

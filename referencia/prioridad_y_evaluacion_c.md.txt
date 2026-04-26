@@ -1,0 +1,71 @@
+---
+
+## Prioridad y evaluación en C
+
+* `&&` tiene mayor prioridad que `||`
+* Expresión:
+
+  ```c
+  a || b && c
+  ```
+
+  Se interpreta como:
+
+  ```c
+  a || (b && c)
+  ```
+
+---
+
+## Evaluación corta (short-circuit)
+
+* `&&` → si una parte es `false`, corta (no evalúa lo demás)
+* `||` → si una parte es `true`, corta
+
+---
+
+## Ejemplos
+
+```c
+int a = 0, b = 1, c = 1;
+
+if (a || b && c)  // a || (b && c)
+```
+
+→ entra (b && c = 1 → a || 1 = 1)
+
+---
+
+```c
+int x = 0;
+
+if (x != 0 && 10 / x > 1)
+```
+
+→ no evalúa `10/x` (no hay error)
+
+---
+
+```c
+if (x != 0 || 10 / x > 1)
+```
+
+→ sí evalúa `10/x` (error: división por 0)
+
+---
+
+## Regla mental
+
+1. Resolver `&&` primero
+2. Después `||`
+3. Aplicar corte lógico
+
+---
+
+## Tip examen
+
+Si hay `&&` y `||` mezclados:
+→ poner paréntesis mentalmente
+→ evaluar paso a paso, no por intuición
+
+---

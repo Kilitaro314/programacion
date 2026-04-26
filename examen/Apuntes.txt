@@ -1,0 +1,369 @@
+matrices base
+
+Perfecto, esto es de lo más útil que podés aprender con matrices, porque los “trampa de parcial” casi siempre son los mismos patrones disfrazados.
+
+Te los separo como los vas a ver en examen y cómo pensarlos sin confundirte.
+
+---
+
+# 🧠 1. Suma / resta de matrices (el clásico engañoso fácil)
+
+### ❗ Trampa:
+
+Te hacen creer que es complicado, pero es solo doble for.
+
+```c id="m1"
+resultado[i][j] = A[i][j] + B[i][j];
+```
+
+### 🔥 Trampa real:
+
+* te cambian tamaño (2x3, 3x2)
+* o te meten valores raros
+
+### ✔ Clave:
+
+👉 mismo índice = mismo “casillero”
+
+---
+
+# 🧠 2. Diagonal principal (MUY típico)
+
+```c id="m2"
+matriz[i][i]
+```
+
+### 🔥 Qué significa:
+
+Solo:
+
+* (0,0)
+* (1,1)
+* (2,2)
+
+### ❗ Trampa:
+
+Te ponen matriz grande y esperan que no te pierdas.
+
+### ✔ Regla:
+
+👉 fila = columna
+
+---
+
+# 🧠 3. Diagonal secundaria (la que confunde a todos)
+
+```c id="m3"
+matriz[i][n - 1 - i]
+```
+
+Para 3x3:
+
+* (0,2)
+* (1,1)
+* (2,0)
+
+### ❗ Trampa:
+
+Te hacen pensar que es doble lógica, pero es solo “invertida”.
+
+---
+
+# 🧠 4. Suma de filas o columnas
+
+### Filas:
+
+```c id="m4"
+for (j)
+    suma += matriz[i][j];
+```
+
+### Columnas:
+
+```c id="m5"
+for (i)
+    suma += matriz[i][j];
+```
+
+### ❗ Trampa:
+
+Te cambian “fila o columna” en el enunciado.
+
+### ✔ Regla mental:
+
+* fila → fijo i
+* columna → fijo j
+
+---
+
+# 🧠 5. Matriz transpuesta (TRAMPA CLÁSICA)
+
+```c id="m6"
+transpuesta[j][i] = matriz[i][j];
+```
+
+### 🔥 Qué hacen:
+
+Te invierten filas ↔ columnas
+
+### ❗ Trampa:
+
+Te ponen salida “girada” o “invertida”
+
+---
+
+# 🧠 6. Buscar máximo / mínimo
+
+```c id="m7"
+if (matriz[i][j] > max)
+    max = matriz[i][j];
+```
+
+### ❗ Trampa:
+
+* lo mezclan con posición
+* o te piden “dónde está el mayor”
+
+---
+
+# 🧠 7. Contar condiciones dentro de matriz
+
+Ejemplo:
+
+* cuántos positivos
+* cuántos pares
+* cuántos mayores a X
+
+```c id="m8"
+if (matriz[i][j] % 2 == 0)
+    contador++;
+```
+
+### ❗ Trampa:
+
+Te meten condición combinada:
+
+* pares positivos
+* negativos impares
+
+---
+
+# 🧠 8. Bordes de matriz (muy típico “difícil”)
+
+Solo:
+
+* primera fila
+* última fila
+* primera columna
+* última columna
+
+```c id="m9"
+if (i == 0 || j == 0 || i == n-1 || j == n-1)
+```
+
+### ❗ Trampa:
+
+Te hacen creer que es complejo, pero es solo límites.
+
+---
+
+# 🧠 9. Matriz identidad (favorito de profesores)
+
+```c id="m10"
+if (i == j) matriz[i][j] = 1;
+else matriz[i][j] = 0;
+```
+
+---
+
+# 🧠 10. Errores “trampa invisibles”
+
+Estos no son de lógica, son de presión:
+
+* olvidar reiniciar acumuladores
+* mezclar i/j
+* imprimir mal formato
+* no inicializar variables
+* salirse de rango (<= en vez de <)
+
+---
+
+# 🧠 RESUMEN MENTAL (lo más importante)
+
+Si lo reduces todo:
+
+👉 80% de matrices en examen son:
+
+* recorrer
+* comparar
+* acumular
+* copiar posición
+
+Y todo depende de esto:
+
+> i = filas (vertical)
+> j = columnas (horizontal)
+
+---
+
+# 🔥 Cómo usar esto a tu favor
+
+Tu repo debería tener ahora:
+
+* `matriz_suma`
+* `diagonal_principal`
+* `diagonal_secundaria`
+* `transpuesta`
+* `max_min`
+* `contadores`
+
+moneda
+
+Sí, cambiar “moneda” por “dado” es una de las trampas típicas, pero la idea de los profes suele ir un poco más allá: no cambian solo el contexto, cambian **la forma de pensar el conteo y las condiciones**.
+
+Te dejo las trampas más comunes con este mismo tipo de ejercicio.
+
+---
+
+# 🎲 1. Cambian el sistema (moneda → dado → cartas)
+
+### Moneda:
+
+* 2 resultados (1 o 2)
+
+### Dado:
+
+* 6 resultados (1–6)
+
+👉 Trampa:
+Te obligan a generalizar lógica de conteo.
+
+Ejemplo típico:
+
+> “contar cuántas veces sale un número par”
+
+```c id="d1"
+if (dado % 2 == 0)
+```
+
+---
+
+# 🎯 2. Te piden varias estadísticas a la vez
+
+En vez de solo caras/secas:
+
+* pares vs impares
+* mayores a 3
+* cuántos 6 salen
+* promedio de tiradas
+
+👉 Trampa:
+te meten múltiples contadores en el mismo loop.
+
+---
+
+# 🔁 3. Cambian la condición de parada
+
+En lugar de “N tiradas”:
+
+* “hasta que salga un 6”
+* “hasta que salgan 3 pares seguidos”
+* “hasta que se repita un número”
+
+👉 Esto rompe el patrón mental de `for/while simple`
+
+---
+
+# ⚠️ 4. Validación más compleja
+
+En vez de solo “1 o 2 válido”:
+
+* solo números entre 1 y 6
+* si no es válido, repetir sin avanzar
+* o penalizar (no contar intento)
+
+👉 Aquí suelen ver si entiendes bien el flujo del `while`
+
+---
+
+# 📊 5. Te piden frecuencia real (no solo conteo)
+
+Ejemplo:
+
+> “mostrar qué número salió más veces”
+
+👉 aquí necesitas:
+
+```c id="f1"
+int conteo[6] = {0};
+```
+
+Esto ya introduce matrices/arreglos.
+
+---
+
+# 🧠 6. Trampa de “doble análisis”
+
+Ejemplo clásico:
+
+> “mostrar porcentaje de pares e impares, y además cuál predominó”
+
+👉 ya no es solo contar, también comparar resultados finales.
+
+---
+
+# 🧨 7. Orden de entrada importante
+
+Ejemplo:
+
+> “detener si salen 3 números pares seguidos”
+
+👉 esto introduce memoria de estado (no solo contador simple)
+
+---
+
+# 🔥 EJEMPLO REAL DE “VERSIÓN TRAMPA”
+
+Imagina esto:
+
+> Simular 20 tiradas de dado.
+> Contar pares, impares y cuántas veces salió 6.
+> Si sale un 6 tres veces seguidas, detener antes.
+
+👉 aquí ya tienes:
+
+* contador normal
+* condición de corte dinámica
+* memoria del último valor
+* múltiples estadísticas
+
+---
+
+# 🧠 Qué están evaluando realmente
+
+No es el dado ni la moneda.
+
+Es si puedes:
+
+* manejar bucles correctamente
+* mantener múltiples contadores
+* controlar condiciones de parada
+* no perder el flujo mental
+
+---
+
+# 🎯 Cómo te conviene prepararte (esto es clave)
+
+Tu ejercicio original es la base. Ahora deberías entrenar:
+
+👉 “mismo loop, más condiciones”
+
+Ejemplo progresivo:
+
+1. solo contar
+2. contar + validar
+3. contar + múltiples variables
+4. contar + condición de parada dinámica
+
+
+
