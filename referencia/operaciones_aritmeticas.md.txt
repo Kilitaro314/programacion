@@ -1,0 +1,11 @@
+pares:
+if (a[i] % 2 == 0)
+
+impares:
+if (a[i] % 2 != 0)
+
+primos:
+if (esPrimo(a[i]))
+
+mayores a x:
+if (a[i] > X)
