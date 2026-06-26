@@ -70,6 +70,8 @@ void mostrarMatriz(int m[MAX][MAX], int f, int c) {
     }
 }
 
+
+
 void matrizAArray(int m[MAX][MAX], int f, int c, int arr[], int *n) {
     *n = 0;
 

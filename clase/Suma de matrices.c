@@ -16,6 +16,7 @@ int main()
     printf ("Escriba los valores de la primera matriz\n");
     for (int x = 0 ;x < 3; x++){
         for (int y = 0; y < 3; y++){
+            
             printf("Matriz[%d][%d]: ",x,y);
             scanf("%d", &matriz1[x][y]);
         }
