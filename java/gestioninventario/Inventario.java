@@ -48,8 +48,10 @@ public class Inventario {
                 Producto producto = buscarProducto(id);
 
                 if (producto != null) {
-                        System.out.println("Producto encontrado: "+ producto.nombre);
-                        productos.remove(producto);
+                        System.out.println("Producto encontrado: " + producto.nombre);
+                        producto.nombre = nombre;
+                        producto.precio = precio;
+                        System.out.println("Producto modificado: " + producto.nombre + " - $" + producto.precio);
                 }
                 else {
                         System.out.println("Producto no encontrado");
