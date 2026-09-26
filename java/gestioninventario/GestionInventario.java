@@ -19,6 +19,8 @@ public class GestionInventario {
             System.out.println("3. Buscar producto");
             System.out.println("4. Modificar stock");
             System.out.println("5. Eliminar producto");
+            System.out.println("6. Modificar producto");
+            System.out.println("7. Salir");
 
             opción = scanner.nextInt();
             scanner.nextLine();
