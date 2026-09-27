@@ -1,5 +1,13 @@
 package sistemabiblioteca;
 
+// 1. Libro se asegura de no guardar datos invalidos. Eso se consigue haciendo que todo el codigo
+//pase por prestar(), devolver() y constructores
+
+// 2. Si alguien hereda la clase, puede saltarse estas validaciones, provocando asi datos basura
+// en los constructores, o modificar prestar()
+
+// 3. Final se asegura de que esta clase no pueda ser heredada
+
 public final class Libro {
     
     private static final String TITULO_POR_DEFECTO = "Sin título";
@@ -119,11 +127,3 @@ public final class Libro {
         System.out.println("======================================");
     }
 }
-
-// 1. Libro se asegura de no guardar datos invalidos. Eso se consigue haciendo que todo el codigo
-//pase por prestar(), devolver() y constructores
-
-// 2. Si alguien hereda la clase, puede saltarse estas validaciones, provocando asi datos basura
-// en los constructores, o modificar prestar()
-
-// 3. Final se asegura de que esta clase no pueda ser heredada
