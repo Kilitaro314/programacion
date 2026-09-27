@@ -41,5 +41,8 @@ public class MainBiblioteca {
         System.out.println("Prestamos exitosos: " + exitos + " de " + intentos + " intentos");
         System.out.println("Copias finales: " + libro3.getCopiasDisponibles()
         + " (no debe ser negativo)");
+
+        libro3.devolver();
+        System.out.println("Tras devolver, copias: " + libro3.getCopiasDisponibles());
     }
 }
