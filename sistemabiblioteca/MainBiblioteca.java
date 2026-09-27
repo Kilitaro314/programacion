@@ -4,11 +4,6 @@ public class MainBiblioteca {
 
     public static void main(String[] args){
 
-        // Ojo: new Libro() sin argumentos NO compila. El compilador solo genera
-        // el constructor vacio automatico cuando la clase no declara ninguno. Como
-        // aqui escribimos dos constructores propios, ese constructor por defecto
-        // deja de existir y el compilador obliga a pasar argumentos.
-
         // Constructor canonico
         Libro libro1 = new Libro("Don Quijote", "Miguel de Cervantes","978-84-376-0494-7", 10, 45000.0);
         // Constructor de conveniencia
@@ -44,5 +39,6 @@ public class MainBiblioteca {
 
         libro3.devolver();
         System.out.println("Tras devolver, copias: " + libro3.getCopiasDisponibles());
+        System.out.println("Prestamos históricos de libro 3: " + libro3.getPrestamosHistoricos());
     }
 }

@@ -1,6 +1,6 @@
 package sistemabiblioteca;
 
-public class Libro {
+public final class Libro {
     
     private static final String TITULO_POR_DEFECTO = "Sin título";
     private static final String AUTOR_POR_DEFECTO = "Autor desconocido";
@@ -12,6 +12,7 @@ public class Libro {
     private final String autor;
     private final String isbn;
     private int copiasDisponibles;
+    private int prestamosHistoricos;
     private double precioReposicion;
 
     public Libro(String titulo, String autor, String isbn,
@@ -54,6 +55,7 @@ public class Libro {
     }
 
     public boolean prestar() {
+        prestamosHistoricos++;
         if (copiasDisponibles > 0) {
             copiasDisponibles--;
             System.out.println("Préstamo registrado: \"" + titulo + "\". Copias disponibles: " + copiasDisponibles);
@@ -98,6 +100,10 @@ public class Libro {
         return copiasDisponibles;
     }
 
+    public int getPrestamosHistoricos() {
+        return prestamosHistoricos;
+    }
+
     public double getPrecioReposicion() {
         return precioReposicion;
     }
@@ -109,6 +115,15 @@ public class Libro {
         System.out.println("ISBN:    " + isbn);
         System.out.println("Copias disponibles: " + copiasDisponibles);
         System.out.println("Precio de reposición: $" + precioReposicion);
+        System.out.println("Prestamos históricos: " + prestamosHistoricos);
         System.out.println("======================================");
     }
 }
+
+// 1. Libro se asegura de no guardar datos invalidos. Eso se consigue haciendo que todo el codigo
+//pase por prestar(), devolver() y constructores
+
+// 2. Si alguien hereda la clase, puede saltarse estas validaciones, provocando asi datos basura
+// en los constructores, o modificar prestar()
+
+// 3. Final se asegura de que esta clase no pueda ser heredada
