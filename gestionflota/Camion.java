@@ -1,3 +1,5 @@
+package gestionflota;
+
 public class Camion extends Vehiculo {
     private double capacidadToneladas;
 

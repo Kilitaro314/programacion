@@ -1,3 +1,5 @@
+package gestionflota;
+
 public class Furgoneta extends Vehiculo {
     private boolean tieneRefrigeracion;
 

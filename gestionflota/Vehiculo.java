@@ -1,3 +1,5 @@
+package gestionflota;
+
 public class Vehiculo {
     
     protected String patente;

@@ -1,3 +1,5 @@
+package gestionflota;
+
 public class MotoEnvios extends Vehiculo {
     //Aplicar 15% de descuento respecto a la tarifa base
 

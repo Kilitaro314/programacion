@@ -1,3 +1,5 @@
+package gestionflota;
+
 public class MainFlota {
     public static void main(String[] args) {
         double totalOperativo = 0;
